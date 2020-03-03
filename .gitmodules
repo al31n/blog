@@ -1,0 +1,9 @@
+[submodule "themes/hugo-kiera"]
+	path = themes/hugo-kiera
+	url = https://github.com/funkydan2/hugo-kiera.git
+[submodule "hugo-kiera"]
+	path = hugo-kiera
+	url = https://github.com/funkydan2/hugo-kiera.git
+[submodule "al31n.github.io"]
+	path = al31n.github.io
+	url = git@github.com:al31n/al31n.github.io.git

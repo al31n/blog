@@ -1,0 +1,22 @@
+baseURL: "https://al31n.github.io"
+languageCode: "en-us"
+title: "Andy's Blog"
+theme: "hugo-kiera"
+paginate: 10
+enableEmoji: true
+pygmentsCodeFences: true
+publishDir: "al31n.github.io"
+menu:
+  main:
+  - identifier: posts
+    name: Posts
+    title: Posts
+    url: /posts
+author:
+  name: "Andy Leung"
+  twitter: andydotleung
+  github: al31n
+  linkedin: andy8leung
+
+params:
+  tagline: '¯\\_\_(ツ)\_\_/¯'
