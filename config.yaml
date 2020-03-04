@@ -1,6 +1,6 @@
 baseURL: "https://al31n.github.io"
 languageCode: "en-us"
-title: "Andy's Blog"
+title: "Al31n's Blog"
 theme: "hugo-kiera"
 paginate: 10
 enableEmoji: true
