@@ -7,7 +7,7 @@ git clone --single-branch --branch master git@github.com:al31n/al31n.github.io.g
 
 echo "* synchronizing the files:"
 rsync -arv public/ master --delete --exclude ".git"
-cp README.md master/
+cp README.MD master/
 
 echo "* pushing to master:"
 cd master
