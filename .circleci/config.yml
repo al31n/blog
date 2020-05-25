@@ -7,7 +7,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "0a:99:73:50:62:fe:9a:dc:48:ba:8b:1f:cf:be:17:10"
+            - "3e:6f:38:96:a7:71:ee:ad:08:c9:e0:27:90:b3:56:b7"
       - checkout
       - run: git submodule update --init
       - run: hugo -v -s /src -d /src/public
