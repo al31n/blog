@@ -11,8 +11,9 @@ cp README.MD master/
 
 echo "* cd to master:"
 cd master
-echo "* setting up configurations:"
+echo "* setting up git deploy username:"
 git config user.name "CircleCI"
+echo "* setting up git deploy email:"
 git config user.email ${GIT_EMAIL}
 echo "* adding commit:"
 git add -A
