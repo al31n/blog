@@ -9,12 +9,15 @@ echo "* synchronizing the files:"
 rsync -arv public/ master --delete --exclude ".git"
 cp README.MD master/
 
-echo "* pushing to master:"
+echo "* cd to master:"
 cd master
+echo "* setting up configurations:"
 git config user.name "CircleCI"
 git config user.email ${GIT_EMAIL}
+echo "* adding commit:"
 git add -A
 git commit -m "Automated deployment job ${CIRCLE_BRANCH} #${CIRCLE_BUILD_NUM} [skip ci]" --allow-empty
+echo "* pushing to master:"
 git push origin master
 
 echo "* done"
