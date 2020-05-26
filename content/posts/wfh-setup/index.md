@@ -1,7 +1,6 @@
 ---
 title: WFH Setup Tips
 date: 2020-03-22T22:18:09.000+00:00
-draft: true
 
 ---
 Wiith all the precautionary steps that most companies around the world are taking to tackle COVID-19, most people are now required to work from home. I've summarized some tips on how to work from home comfortably.
