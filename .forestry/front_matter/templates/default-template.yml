@@ -10,3 +10,4 @@ fields:
   label: date
 pages:
 - content/posts/docker-exec-signal-handlers/signal-handling-with-docker-exec.md
+- content/posts/kubernetes/deploying-kubernetes-to-a-local-vm-cluster-with-kubeadm-and-vagrant.md
