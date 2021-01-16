@@ -83,13 +83,38 @@ Clone the project which contains the vagrant file and bootstrap file
     $ cd project
     $ vagrant up
 
+Note: You may have to tweak the VagrantFile. I'm using nfs to share config files.
+
 ## 2. Initialize the cluster
 
 ## 3. Setup container networking
 
 ## 4. Add k8s worker nodes
 
+ssh into the other machines and run kubeadm join
+
+Hop back to the master machine and check the node statuses by running. If the status is all ready, we're good to go!
+
+    [vagrant@master0001 ~]$ kubectl get nodes
+    NAME         STATUS   ROLES                  AGE    VERSION
+    master0001   Ready    control-plane,master   0h6m   v1.20.1
+    worker0001   Ready    <none>                 0h3m   v1.20.1
+    worker0002   Ready    <none>                 0h3m   v1.20.1
+
 ## 5. Deploy sample application
+
+I found a docker image on Docker hub that returns the hostname of the environment. In this case, it should be the hostname of the container. This will make it easier to see which pod we're running. This is all wrapped up in a deployment manifest which Kubernetes will use to deploy out the corresponding pods.
+
+For the service manifest, we'll be specifying a service for our test application. The service terminology is a bit confusing. In Kubernetes, a service is a network abstraction layer that groups a set of pods. With services, we can set which deployment we want to refer to and what kind of service it is (ClusterIP, NodePort, LoadBalancer)
+
+    [vagrant@master0001 ~]$ kubectl create -f /srv/k8sconfig/test-demo-deploy.yml 
+    deployment.apps/test-deployment created
+    [vagrant@master0001 ~]$ kubectl create -f /srv/k8sconfig/test-demo-svc.yml 
+    service/test-svc created
+
+With the deployment and service deployed, we should be to curl the worker node's and see the response of our applications.
+
+That's great! We can deploy our single stateless application on 2 machines and behind the scene, Kubernetes will translate the request to one of the pods in the deployment that belong to the test service. We can add a load balancer in front so the client won't need to know the worker node ip addresses. A simple solution would be to use HAProxy to provide load balancing.
 
 # Conclusion
 
