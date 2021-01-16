@@ -62,7 +62,7 @@ Cluster Networking allows pods to communicate with each other. It's an important
 
 Kubernetes has a basic network plugin which doesn't do pod-to-pod communication from different nodes(ie. pod A from node A to pod B from node B). Admins/Engineers will have to supply their own based on their needs.
 
-For simplicity sake, I've narrowed down to flannel by CoreOS which seems to be the common route to go for self-hosted Kubernetes. Cluster networking is a pretty deep topic itself.
+For simplicity sake, I've narrowed down to flannel by CoreOS which seems to be the common route to go for self-hosted Kubernetes. Kubernetes networking is a pretty deep topic itself.
 
 # Deploying to a local VM Cluster
 
